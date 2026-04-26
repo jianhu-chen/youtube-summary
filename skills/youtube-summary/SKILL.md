@@ -118,7 +118,6 @@ Read `$WORKDIR/metadata.json` for full metadata (description, tags, etc. help un
 
 **General rules**:
 - **Language**: By default, write reports in the **same language as the video**. Preserve technical terms in their original language. If the full user input (`$ARGUMENTS`) contains text beyond the URL (e.g., "Please write the report in English" or "请用繁体中文撰写报告"), follow that language preference instead.
-- Headings start from `##` (h2) — do not write h1 (the filename already contains the topic)
 - If the video is short (< 5 minutes), the structure can be simplified
 
 ### 7. Clean up temporary files

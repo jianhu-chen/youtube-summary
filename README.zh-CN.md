@@ -2,7 +2,7 @@
 
 通用 AI agent skill，用于转录 YouTube 视频并生成结构化报告。
 
-**[🏠 GitHub](https://github.com/jianhu-chen/youtube-summary)** | **[🇬🇧 English](README.md)**
+**[🏠 GitHub](https://github.com/jayhchen/youtube-summary)** | **[🇬🇧 English](README.md)**
 
 ## ✨ 功能
 
@@ -16,26 +16,26 @@
 ## 📦 安装
 
 ```bash
-npx skills add jianhu-chen/youtube-summary
+npx skills add jayhchen/youtube-summary
 ```
 
 安装到指定 agent：
 
 ```bash
 # Claude Code
-npx skills add jianhu-chen/youtube-summary -a claude-code
+npx skills add jayhchen/youtube-summary -a claude-code
 
 # Cursor
-npx skills add jianhu-chen/youtube-summary -a cursor
+npx skills add jayhchen/youtube-summary -a cursor
 
 # Codex
-npx skills add jianhu-chen/youtube-summary -a codex
+npx skills add jayhchen/youtube-summary -a codex
 ```
 
 全局安装（所有项目可用）：
 
 ```bash
-npx skills add jianhu-chen/youtube-summary -g
+npx skills add jayhchen/youtube-summary -g
 ```
 
 ## 🚀 使用
@@ -104,7 +104,7 @@ npx skills add jianhu-chen/youtube-summary -g
 
 ## 🔗 相关项目
 
-- [bilibili-summary](https://github.com/jianhu-chen/bilibili-summary) — 将哔哩哔哩视频转录为 Markdown 报告
+- [bilibili-summary](https://github.com/jayhchen/bilibili-summary) — 将哔哩哔哩视频转录为 Markdown 报告
 
 ## 📄 许可证
 

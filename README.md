@@ -2,7 +2,7 @@
 
 Universal AI agent skills for transcribing YouTube videos and generating structured reports.
 
-**[🏠 GitHub](https://github.com/jianhu-chen/youtube-summary)** | **[🇨🇳 中文文档](README.zh-CN.md)**
+**[🏠 GitHub](https://github.com/jayhchen/youtube-summary)** | **[🇨🇳 中文文档](README.zh-CN.md)**
 
 ## ✨ Features
 
@@ -16,26 +16,26 @@ Universal AI agent skills for transcribing YouTube videos and generating structu
 ## 📦 Installation
 
 ```bash
-npx skills add jianhu-chen/youtube-summary
+npx skills add jayhchen/youtube-summary
 ```
 
 Install to a specific agent:
 
 ```bash
 # Claude Code
-npx skills add jianhu-chen/youtube-summary -a claude-code
+npx skills add jayhchen/youtube-summary -a claude-code
 
 # Cursor
-npx skills add jianhu-chen/youtube-summary -a cursor
+npx skills add jayhchen/youtube-summary -a cursor
 
 # Codex
-npx skills add jianhu-chen/youtube-summary -a codex
+npx skills add jayhchen/youtube-summary -a codex
 ```
 
 Install globally (available in all projects):
 
 ```bash
-npx skills add jianhu-chen/youtube-summary -g
+npx skills add jayhchen/youtube-summary -g
 ```
 
 ## 🚀 Usage
@@ -104,7 +104,7 @@ Missing dependencies will be auto-installed by the agent during the first run.
 
 ## 🔗 Related Projects
 
-- [bilibili-summary](https://github.com/jianhu-chen/bilibili-summary) — Transcribe Bilibili videos into Markdown reports
+- [bilibili-summary](https://github.com/jayhchen/bilibili-summary) — Transcribe Bilibili videos into Markdown reports
 
 ## 📄 License
 

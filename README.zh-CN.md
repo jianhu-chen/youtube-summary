@@ -1,6 +1,6 @@
 # youtube-summary
 
-通用 AI agent skill，将 YouTube 视频转录为 Markdown 报告。
+通用 AI agent skill，用于转录 YouTube 视频并生成结构化报告。
 
 **[🏠 GitHub](https://github.com/jianhu-chen/youtube-summary)** | **[🇬🇧 English](README.md)**
 
@@ -40,9 +40,25 @@ npx skills add jianhu-chen/youtube-summary -g
 
 ## 🚀 使用
 
+本包提供**两个技能**，可搭配使用或独立使用：
+
+### 第 1 步：转录视频
+
 ```
-/youtube-summary <youtube-url>
+/youtube-transcribe <youtube-url>
 ```
+
+下载音频、运行 ASR、输出完整转录文本，直接显示在对话中。
+
+### 第 2 步：生成报告
+
+```
+/youtube-report [语言偏好]
+```
+
+接收对话中的转录文本，生成包含 Highlights 和 Video Details 的格式化 Markdown 报告。报告直接渲染在对话中 — 不保存文件到磁盘。
+
+> **提示：** `/youtube-report` 是通用的 — 适用于任何来源的转录文本（YouTube、Bilibili、粘贴文本），不限于 `/youtube-transcribe`。
 
 ## ⚙️ 配置
 
@@ -59,7 +75,7 @@ npx skills add jianhu-chen/youtube-summary -g
 如需指定其他语言，请在请求中说明，例如：
 
 ```
-/youtube-summary <youtube-url> 请用英文撰写报告
+/youtube-report 请用英文撰写报告
 ```
 
 ## 📋 依赖
@@ -75,11 +91,16 @@ npx skills add jianhu-chen/youtube-summary -g
 
 ## ⚡ 工作原理
 
+### `/youtube-transcribe`
 1. 📥 **下载** — 通过 yt-dlp 获取音频
 2. ✂️ **分段** — 超过 50 分钟自动切分，所有分片统一压缩至 32k mono
 3. 🎙️ **转录** — 并行调用 OpenAI 兼容 Whisper ASR API（最大并发 4）
-4. 🤖 **总结** — AI 生成 Highlights + 详细文字版
-5. 📄 **输出** — 在当前目录保存 `.md` 报告
+4. 📝 **输出** — 在对话中展示完整转录文本
+
+### `/youtube-report`
+1. 📖 **读取** — 从对话上下文中获取转录文本
+2. 🤖 **总结** — AI 生成 Highlights + 详细文字版
+3. 📄 **输出** — 在对话中渲染格式化报告
 
 ## 🔗 相关项目
 

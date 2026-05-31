@@ -14,8 +14,6 @@ Usage:
   transcribe.py transcribe <workdir> <chunk_index>   (single chunk fallback)
   transcribe.py collect <workdir>
   transcribe.py cleanup <workdir>
-  transcribe.py --version
-
 Exit codes:
   0  = success
   1  = operation failure
@@ -36,8 +34,6 @@ import subprocess
 import sys
 import threading
 import time
-
-__version__ = "1.0.1"
 
 # --- Configuration ---
 
@@ -521,14 +517,9 @@ def main():
         eprint(f"  {sys.argv[0]} transcribe <workdir> <chunk_index>")
         eprint(f"  {sys.argv[0]} collect <workdir>")
         eprint(f"  {sys.argv[0]} cleanup <workdir>")
-        eprint(f"  {sys.argv[0]} --version")
         sys.exit(2)
 
     command = sys.argv[1]
-
-    if command == "--version":
-        print(f"youtube-summary skill v{__version__}")
-        sys.exit(0)
 
     if command == "prepare":
         if len(sys.argv) < 4:

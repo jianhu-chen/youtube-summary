@@ -1,6 +1,6 @@
 # youtube-summary
 
-Universal AI agent skill for transcribing YouTube videos into Markdown reports.
+Universal AI agent skills for transcribing YouTube videos and generating structured reports.
 
 **[🏠 GitHub](https://github.com/jianhu-chen/youtube-summary)** | **[🇨🇳 中文文档](README.zh-CN.md)**
 
@@ -40,9 +40,25 @@ npx skills add jianhu-chen/youtube-summary -g
 
 ## 🚀 Usage
 
+This package provides **two skills** that work together or independently:
+
+### Step 1: Transcribe the video
+
 ```
-/youtube-summary <youtube-url>
+/youtube-transcribe <youtube-url>
 ```
+
+Downloads the audio, runs ASR, and outputs the full transcript text directly in the conversation.
+
+### Step 2: Generate a report
+
+```
+/youtube-report [language preference]
+```
+
+Takes the transcript (already in the conversation) and generates a polished Markdown report with Highlights and Video Details sections. The report renders directly in the conversation — no file is saved to disk.
+
+> **Tip:** `/youtube-report` is generic — it works with transcripts from any source (YouTube, Bilibili, pasted text), not just `/youtube-transcribe`.
 
 ## ⚙️ Configuration
 
@@ -59,7 +75,7 @@ By default, reports are written in the same language as the video. Technical ter
 To specify a different language for the report, include your language preference in your request, e.g.:
 
 ```
-/youtube-summary <youtube-url> Please write the report in Simplified Chinese
+/youtube-report Please write the report in Simplified Chinese
 ```
 
 ## 📋 Dependencies
@@ -75,11 +91,16 @@ Missing dependencies will be auto-installed by the agent during the first run.
 
 ## ⚡ How It Works
 
+### `/youtube-transcribe`
 1. 📥 **Download** — Fetches audio via yt-dlp
 2. ✂️ **Segment** — Splits audio into chunks if > 50 min, compresses all chunks to 32k mono
 3. 🎙️ **Transcribe** — Calls OpenAI-compatible Whisper ASR API in parallel (max 4 concurrent)
-4. 🤖 **Summarize** — AI generates Highlights + detailed written transcript
-5. 📄 **Output** — Saves a `.md` report in the current directory
+4. 📝 **Output** — Presents the full transcript in the conversation
+
+### `/youtube-report`
+1. 📖 **Read** — Gets transcript text from the conversation context
+2. 🤖 **Summarize** — AI generates Highlights + detailed written transcript
+3. 📄 **Output** — Renders the formatted report in the conversation
 
 ## 🔗 Related Projects
 

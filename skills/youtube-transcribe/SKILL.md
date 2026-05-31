@@ -3,6 +3,10 @@ name: youtube-transcribe
 description: "Transcribe any YouTube video to text. Downloads audio, runs ASR via OpenAI-compatible Whisper API, returns the full transcript. Use whenever you need a YouTube video transcribed — the output is raw text ready for summarization, translation, or analysis. Also use when the user mentions video transcription, converting speech to text, or getting a video's spoken content."
 argument-hint: "<youtube-url>"
 allowed-tools: Bash(python3 *) Bash(yt-dlp *) Bash(ffmpeg *) Bash(brew *) Bash(pip3 *) Bash(curl *) Bash(mktemp *)
+metadata:
+  requires:
+    bins: [yt-dlp, ffmpeg, curl]
+    env: [ASR_API_KEY]
 ---
 
 # YouTube Video Transcription
